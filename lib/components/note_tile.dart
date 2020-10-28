@@ -2,22 +2,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class NoteTile extends StatelessWidget {
-  final double noteTime;
-  final String taskTitle;
 
-  NoteTile(
-      {this.taskTitle,
-        this.noteTime});
+  final String title;
+  final double noteTime;
+
+  NoteTile({this.title, this.noteTime});
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(
-        taskTitle,
-      ),
-      trailing: Text(
-        '$noteTime'
-      ),
+      title: Text(title),
+      trailing: Text('$noteTime'),
     );
   }
 }
