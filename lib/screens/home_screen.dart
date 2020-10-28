@@ -126,8 +126,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: FlatButton(
                               color: Colors.lightBlueAccent,
                               onPressed: () {
-                                setState(() async {
-                                  await Navigator.of(context).push(MaterialPageRoute(
+                                _chewieController.pause();
+                                setState(() {
+                                  Navigator.of(context).push(MaterialPageRoute(
                                       builder: (context) => QuizScreen()));
                                 });
                               },
