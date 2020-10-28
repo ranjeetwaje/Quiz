@@ -1,21 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="Video pause at" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dea64411-174a-4b74-abd9-b0960ae86cb3" name="Default Changelist" comment="" />
+    <list default="true" id="dea64411-174a-4b74-abd9-b0960ae86cb3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/videos/smart-farmer.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/note_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/note_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/note_tile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/note_tile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/model/note.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/note.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/home_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3a_API_28" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="60f944a7" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Dart File" />
       </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
     </option>
   </component>
   <component name="ProjectId" id="1jPcocKu26DQPLG5woudrMsOenF" />
@@ -49,29 +74,57 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1177" height="252" key="GridCell.Tab.0.bottom" timestamp="1603728499108">
+    <state width="555" height="466" key="DebuggerActiveHint" timestamp="1603773426056">
+      <screen x="0" y="23" width="1633" height="1027" />
+    </state>
+    <state width="555" height="466" key="DebuggerActiveHint/0.23.1633.1027@0.23.1633.1027" timestamp="1603773426056" />
+    <state width="1177" height="252" key="GridCell.Tab.0.bottom" timestamp="1603872678999">
+      <screen x="0" y="23" width="1633" height="1027" />
+    </state>
+    <state width="1177" height="252" key="GridCell.Tab.0.bottom/0.23.1627.1027@0.23.1627.1027" timestamp="1603812877385" />
+    <state width="1177" height="252" key="GridCell.Tab.0.bottom/0.23.1629.1027@0.23.1629.1027" timestamp="1603787843121" />
+    <state width="1177" height="252" key="GridCell.Tab.0.bottom/0.23.1630.1027@0.23.1630.1027" timestamp="1603853428423" />
+    <state width="1177" height="311" key="GridCell.Tab.0.bottom/0.23.1632.1027@0.23.1632.1027" timestamp="1603872008317" />
+    <state width="1177" height="252" key="GridCell.Tab.0.bottom/0.23.1633.1027@0.23.1633.1027" timestamp="1603872678999" />
+    <state width="1177" height="252" key="GridCell.Tab.0.bottom/0.23.1635.1027@0.23.1635.1027" timestamp="1603867586560" />
+    <state width="1177" height="252" key="GridCell.Tab.0.center" timestamp="1603872678998">
+      <screen x="0" y="23" width="1633" height="1027" />
+    </state>
+    <state width="1177" height="252" key="GridCell.Tab.0.center/0.23.1627.1027@0.23.1627.1027" timestamp="1603812877384" />
+    <state width="1177" height="252" key="GridCell.Tab.0.center/0.23.1629.1027@0.23.1629.1027" timestamp="1603787843120" />
+    <state width="1177" height="252" key="GridCell.Tab.0.center/0.23.1630.1027@0.23.1630.1027" timestamp="1603853428423" />
+    <state width="1177" height="311" key="GridCell.Tab.0.center/0.23.1632.1027@0.23.1632.1027" timestamp="1603872008316" />
+    <state width="1177" height="252" key="GridCell.Tab.0.center/0.23.1633.1027@0.23.1633.1027" timestamp="1603872678998" />
+    <state width="1177" height="252" key="GridCell.Tab.0.center/0.23.1635.1027@0.23.1635.1027" timestamp="1603867586559" />
+    <state width="1177" height="252" key="GridCell.Tab.0.left" timestamp="1603872678998">
+      <screen x="0" y="23" width="1633" height="1027" />
+    </state>
+    <state width="1177" height="252" key="GridCell.Tab.0.left/0.23.1627.1027@0.23.1627.1027" timestamp="1603812877384" />
+    <state width="1177" height="252" key="GridCell.Tab.0.left/0.23.1629.1027@0.23.1629.1027" timestamp="1603787843120" />
+    <state width="1177" height="252" key="GridCell.Tab.0.left/0.23.1630.1027@0.23.1630.1027" timestamp="1603853428422" />
+    <state width="1177" height="311" key="GridCell.Tab.0.left/0.23.1632.1027@0.23.1632.1027" timestamp="1603872008316" />
+    <state width="1177" height="252" key="GridCell.Tab.0.left/0.23.1633.1027@0.23.1633.1027" timestamp="1603872678998" />
+    <state width="1177" height="252" key="GridCell.Tab.0.left/0.23.1635.1027@0.23.1635.1027" timestamp="1603867586559" />
+    <state width="1177" height="252" key="GridCell.Tab.0.right" timestamp="1603872678998">
+      <screen x="0" y="23" width="1633" height="1027" />
+    </state>
+    <state width="1177" height="252" key="GridCell.Tab.0.right/0.23.1627.1027@0.23.1627.1027" timestamp="1603812877384" />
+    <state width="1177" height="252" key="GridCell.Tab.0.right/0.23.1629.1027@0.23.1629.1027" timestamp="1603787843121" />
+    <state width="1177" height="252" key="GridCell.Tab.0.right/0.23.1630.1027@0.23.1630.1027" timestamp="1603853428423" />
+    <state width="1177" height="311" key="GridCell.Tab.0.right/0.23.1632.1027@0.23.1632.1027" timestamp="1603872008316" />
+    <state width="1177" height="252" key="GridCell.Tab.0.right/0.23.1633.1027@0.23.1633.1027" timestamp="1603872678998" />
+    <state width="1177" height="252" key="GridCell.Tab.0.right/0.23.1635.1027@0.23.1635.1027" timestamp="1603867586560" />
+    <state x="394" y="221" key="RollbackChangesDialog" timestamp="1603860893482">
+      <screen x="0" y="23" width="1633" height="1027" />
+    </state>
+    <state x="394" y="221" key="RollbackChangesDialog/0.23.1633.1027@0.23.1633.1027" timestamp="1603860893482" />
+    <state x="280" y="130" width="1019" height="742" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1603781196472">
+      <screen x="0" y="23" width="1633" height="1027" />
+    </state>
+    <state x="280" y="130" width="1019" height="742" key="com.android.tools.idea.avdmanager.AvdListDialog/0.23.1633.1027@0.23.1633.1027" timestamp="1603781196472" />
+    <state x="231" y="246" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1603799822995">
       <screen x="0" y="23" width="1630" height="1027" />
     </state>
-    <state width="588" height="252" key="GridCell.Tab.0.bottom/0.23.1627.1027@0.23.1627.1027" timestamp="1603725802522" />
-    <state width="1177" height="252" key="GridCell.Tab.0.bottom/0.23.1629.1027@0.23.1629.1027" timestamp="1603727906867" />
-    <state width="1177" height="252" key="GridCell.Tab.0.bottom/0.23.1630.1027@0.23.1630.1027" timestamp="1603728499108" />
-    <state width="1177" height="252" key="GridCell.Tab.0.center" timestamp="1603728499108">
-      <screen x="0" y="23" width="1630" height="1027" />
-    </state>
-    <state width="588" height="252" key="GridCell.Tab.0.center/0.23.1627.1027@0.23.1627.1027" timestamp="1603725802522" />
-    <state width="1177" height="252" key="GridCell.Tab.0.center/0.23.1629.1027@0.23.1629.1027" timestamp="1603727906867" />
-    <state width="1177" height="252" key="GridCell.Tab.0.center/0.23.1630.1027@0.23.1630.1027" timestamp="1603728499108" />
-    <state width="1177" height="252" key="GridCell.Tab.0.left" timestamp="1603728499107">
-      <screen x="0" y="23" width="1630" height="1027" />
-    </state>
-    <state width="588" height="252" key="GridCell.Tab.0.left/0.23.1627.1027@0.23.1627.1027" timestamp="1603725802522" />
-    <state width="1177" height="252" key="GridCell.Tab.0.left/0.23.1629.1027@0.23.1629.1027" timestamp="1603727906866" />
-    <state width="1177" height="252" key="GridCell.Tab.0.left/0.23.1630.1027@0.23.1630.1027" timestamp="1603728499107" />
-    <state width="1177" height="252" key="GridCell.Tab.0.right" timestamp="1603728499108">
-      <screen x="0" y="23" width="1630" height="1027" />
-    </state>
-    <state width="588" height="252" key="GridCell.Tab.0.right/0.23.1627.1027@0.23.1627.1027" timestamp="1603725802522" />
-    <state width="1177" height="252" key="GridCell.Tab.0.right/0.23.1629.1027@0.23.1629.1027" timestamp="1603727906867" />
-    <state width="1177" height="252" key="GridCell.Tab.0.right/0.23.1630.1027@0.23.1630.1027" timestamp="1603728499108" />
+    <state x="231" y="246" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.23.1630.1027@0.23.1630.1027" timestamp="1603799822995" />
   </component>
 </project>
