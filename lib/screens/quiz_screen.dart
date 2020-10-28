@@ -11,9 +11,6 @@ import '../constants.dart';
 
 class QuizScreen extends StatefulWidget {
   static const String id = 'quiz_screen';
-
-
-
   @override
   _QuizScreenState createState() => _QuizScreenState();
 }
@@ -76,6 +73,11 @@ class _QuizScreenState extends State<QuizScreen> {
   void initState() {
     getQuizData();
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   @override
