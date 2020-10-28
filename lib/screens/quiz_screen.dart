@@ -29,9 +29,12 @@ class _QuizScreenState extends State<QuizScreen> {
   String option3;
   String option4;
 
-  void getQuizData() async {
+  Future<QuizModel> getQuizData() async {
     // var quizData = await QuizBank().getQuestionData();
-    quizModel = await loadQuiz();
+    return quizModel = await loadQuiz();
+  }
+
+  void loadQuizData(QuizModel quizModel) {
     question = stringFormatter(quizModel.stimulus);
     option1 = stringFormatter(quizModel.options[0]["label"]);
     option2 = stringFormatter(quizModel.options[1]["label"]);
@@ -79,102 +82,110 @@ class _QuizScreenState extends State<QuizScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top:30.0, bottom: 10.0),
-              child: Container(
-                height: 400.0,
-                child: Column(
-                  children: [
-                    Text(
-                      'Oh! My Quiz',
-                      style: kButtonTextStyle,
-                    ),
-                    SizedBox(height: 20.0,),
-                    Text(
-                      question = question != null ? question : 'No Question',
-                      textAlign: TextAlign.center,
-                      style: kButtonTextStyle,
-                    ),
-                    SizedBox(height: 20.0,),
-                    CircularCountDownTimer(
-                      width: MediaQuery.of(context).size.width / 4,
-                      height: MediaQuery.of(context).size.height / 4,
-                      duration: 10,
-                      fillColor: Colors.white,
-                      color: Colors.red,
-                      controller: _countDownController,
-                      textStyle: TextStyle(
-                          fontSize: 22.0, color: Colors.white, fontWeight: FontWeight.bold),
-                      onComplete: () {},
-                    )
-                  ],
-                ),
-              ),
-            ),
-            Expanded(
-              child: Row(
+        body: FutureBuilder<QuizModel>(
+          future: getQuizData(),
+          builder: (BuildContext context, AsyncSnapshot<QuizModel> snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) return const CircularProgressIndicator();
+            if (snapshot.hasData)
+              loadQuizData(snapshot.data);
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Expanded(
-                    child: ReusableCard(
-                      color: kActiveCardColor,
-                      childCard: IconContent(label: 'A',
-                        title: option1.toString(),
-                        circleBgColor: Colors.yellowAccent,
+                  Padding(
+                    padding: const EdgeInsets.only(top:30.0, bottom: 10.0),
+                    child: Container(
+                      height: 400.0,
+                      child: Column(
+                        children: [
+                          Text(
+                            'Oh! My Quiz',
+                            style: kButtonTextStyle,
+                          ),
+                          SizedBox(height: 20.0,),
+                          Text(
+                            question = question != null ? question : 'No Question',
+                            textAlign: TextAlign.center,
+                            style: kButtonTextStyle,
+                          ),
+                          SizedBox(height: 20.0,),
+                          CircularCountDownTimer(
+                            width: MediaQuery.of(context).size.width / 4,
+                            height: MediaQuery.of(context).size.height / 4,
+                            duration: 10,
+                            fillColor: Colors.white,
+                            color: Colors.red,
+                            controller: _countDownController,
+                            textStyle: TextStyle(
+                                fontSize: 22.0, color: Colors.white, fontWeight: FontWeight.bold),
+                            onComplete: () {},
+                          )
+                        ],
                       ),
-                      onTap: (){
-                        isCorrect(0);
-                      },
                     ),
                   ),
                   Expanded(
-                    child: ReusableCard(
-                      color: kActiveCardColor,
-                      childCard: IconContent(label: 'B',
-                          title: option2.toString(),
-                          circleBgColor: Colors.lightBlueAccent,
-                      ),
-                      onTap: () {
-                        isCorrect(1);
-                      },
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: ReusableCard(
+                            color: kActiveCardColor,
+                            childCard: IconContent(label: 'A',
+                              title: option1.toString(),
+                              circleBgColor: Colors.yellowAccent,
+                            ),
+                            onTap: (){
+                              isCorrect(0);
+                            },
+                          ),
+                        ),
+                        Expanded(
+                          child: ReusableCard(
+                            color: kActiveCardColor,
+                            childCard: IconContent(label: 'B',
+                              title: option2.toString(),
+                              circleBgColor: Colors.lightBlueAccent,
+                            ),
+                            onTap: () {
+                              isCorrect(1);
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: ReusableCard(
+                            color: kActiveCardColor,
+                            childCard: IconContent(label: 'C',
+                              title: option3.toString(),
+                              circleBgColor: Colors.greenAccent,
+                            ),
+                            onTap: (){
+                              isCorrect(2);
+                            },
+                          ),
+                        ),
+                        Expanded(
+                          child: ReusableCard(
+                            color: kActiveCardColor,
+                            childCard: IconContent(label: 'D',
+                              title: option4.toString(),
+                              circleBgColor: Colors.orangeAccent,
+                            ),
+                            onTap: () {
+                              isCorrect(3);
+                            },
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
-              ),
-            ),
-            Expanded(
-              child: Row(
-                children: [
-                  Expanded(
-                    child: ReusableCard(
-                      color: kActiveCardColor,
-                      childCard: IconContent(label: 'C',
-                          title: option3.toString(),
-                        circleBgColor: Colors.greenAccent,
-                      ),
-                      onTap: (){
-                        isCorrect(2);
-                      },
-                    ),
-                  ),
-                  Expanded(
-                    child: ReusableCard(
-                      color: kActiveCardColor,
-                      childCard: IconContent(label: 'D',
-                          title: option4.toString(),
-                        circleBgColor: Colors.orangeAccent,
-                      ),
-                      onTap: () {
-                        isCorrect(3);
-                      },
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
+              );
+          },
         ),
       ),
     );

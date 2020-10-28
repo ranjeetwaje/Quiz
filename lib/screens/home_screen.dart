@@ -1,12 +1,8 @@
-import 'dart:ffi';
 
 import 'package:better_player/better_player.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:quizzy/components/note_list.dart';
 import 'package:quizzy/constants.dart';
-import 'package:quizzy/model/note_data.dart';
 import 'package:quizzy/screens/quiz_screen.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
