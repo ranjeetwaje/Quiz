@@ -6,8 +6,9 @@ class IconContent extends StatelessWidget {
 
   final String label;
   final String title;
+  final Color circleBgColor;
 
-  IconContent({@required this.label, @required this.title});
+  IconContent({@required this.label, @required this.title, this.circleBgColor});
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +20,13 @@ class IconContent extends StatelessWidget {
             label,
             style: kLabelTextStyle,
           ),
-          backgroundColor: Colors.white,
-          radius: 30.0,
+          backgroundColor: circleBgColor,
+          radius: 15.0,
         ),
         SizedBox(height: 10.0,),
         Text(title,
-          style: kButtonTextStyle,
+          style: kLabelTextStyle,
+          textAlign: TextAlign.center,
         )
       ],
     );
