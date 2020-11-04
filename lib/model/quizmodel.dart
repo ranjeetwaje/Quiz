@@ -3,21 +3,44 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 
 class QuizModel {
-  String stimulus;
-  List<dynamic> options;
+  final String stimulus;
+  final List<QuizOptions> options;
 
   QuizModel({this.stimulus, this.options});
 
-  Map<String, dynamic> toJson() => {
-    "stimulus": stimulus,
-    "options": List<dynamic>.from(options.map((x) => x)),
-  };
-
   factory QuizModel.fromJson(Map<String, dynamic> json) {
-    return QuizModel(
-        stimulus: json["stimulus"],
-        options: List<dynamic>.from(json["options"].map((x) => x))
-        );
+    var list = json['options'] as List;
+    List<QuizOptions> optionsList =
+        list.map((i) => QuizOptions.fromJson(i)).toList();
+
+    return QuizModel(stimulus: json["stimulus"], options: optionsList);
+  }
+}
+
+class QuizOptions {
+  final List<dynamic> feedback;
+  final String score;
+  final String label;
+  final dynamic media;
+  final int value;
+  final int isCorrect;
+
+  QuizOptions(
+      {this.feedback,
+      this.score,
+      this.label,
+      this.media,
+      this.value,
+      this.isCorrect});
+
+  factory QuizOptions.fromJson(Map<String, dynamic> json) {
+    return QuizOptions(
+        feedback: List<dynamic>.from(json["feedback"].map((x) => x)),
+        score: json['score'].toString(),
+        label: json['label'].toString(),
+        media: json['media'],
+        value: json['value'],
+        isCorrect: json['isCorrect']);
   }
 }
 

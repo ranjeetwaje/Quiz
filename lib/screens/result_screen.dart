@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quizzy/components/icon_content.dart';
 import 'package:quizzy/components/reusable_card.dart';
-import 'package:quizzy/screens/quiz_screen.dart';
 
 import '../constants.dart';
 
@@ -19,15 +18,14 @@ class ResultScreen extends StatefulWidget {
 }
 
 class _ResultScreenState extends State<ResultScreen> {
-
   int _start = 5;
 
   void startTimer() {
     const oneSec = const Duration(seconds: 1);
     Timer.periodic(
       oneSec,
-          (Timer timer) => setState(
-            () {
+      (Timer timer) => setState(
+        () {
           if (_start < 1) {
             timer.cancel();
             Navigator.pop(context);
@@ -74,13 +72,12 @@ class _ResultScreenState extends State<ResultScreen> {
               padding: const EdgeInsets.all(50.0),
               child: ReusableCard(
                 color: kBottomContainerColor,
-                childCard: IconContent(label: getSelectedOption(),
+                childCard: IconContent(
+                  label: getSelectedOption(),
                   title: widget.resultText,
                   circleBgColor: Colors.yellowAccent,
                 ),
-                onTap: (){
-
-                },
+                onTap: () {},
               ),
             ),
           ),

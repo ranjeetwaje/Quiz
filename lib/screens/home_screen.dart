@@ -1,7 +1,8 @@
-
 import 'package:chewie/chewie.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:quizzy/bloc/bloc_provider.dart';
+import 'package:quizzy/bloc/quizdata_query_bloc.dart';
 import 'package:quizzy/components/note_list.dart';
 import 'package:quizzy/constants.dart';
 import 'package:quizzy/model/note.dart';
@@ -17,7 +18,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   List<Note> notes = [
     Note(note: 'Note 1', timerPosition: 0.3),
     Note(note: 'Note 2', timerPosition: 0.3)
@@ -29,7 +29,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     // _videoPlayerController = VideoPlayerController.asset('videos/smart-farmer.mp4');
-    _videoPlayerController = VideoPlayerController.network('https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4');
+    _videoPlayerController = VideoPlayerController.network(
+        'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4');
     _chewieController = ChewieController(
       videoPlayerController: _videoPlayerController,
       aspectRatio: 3 / 2,
@@ -56,8 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
             TextField(
               decoration: InputDecoration(
                   hintText: 'Add note here!',
-                  hintStyle: TextStyle(color: Colors.white)
-              ),
+                  hintStyle: TextStyle(color: Colors.white)),
               onChanged: (newValue) {
                 note = newValue;
               },
@@ -81,78 +81,91 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Container(
-            height: MediaQuery.of(context).size.height / 2,
-            child: AspectRatio(
-              aspectRatio: 16 / 9,
-              child: Chewie(
-                controller: _chewieController,
+    final bloc = QuizDataQueryBloc();
+    return BlocProvider<QuizDataQueryBloc>(
+      bloc: bloc,
+      child: Scaffold(
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Container(
+              height: MediaQuery.of(context).size.height / 2,
+              child: AspectRatio(
+                aspectRatio: 16 / 9,
+                child: Chewie(
+                  controller: _chewieController,
+                ),
               ),
             ),
-          ),
-          Container(
-            height: MediaQuery.of(context).size.height / 2,
-            child: Column(
-              children: [
-                Container(
-                  height: 50.0,
-                  child: Row(
-                    children: [
-                      Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 30.0, right: 30.0),
-                            child: FlatButton(
-                              color: Colors.lightBlueAccent,
-                              onPressed: () {
-                                setState(() {
-                                  _chewieController.pause();
-                                  int seconds = _chewieController.videoPlayerController.value.position.inSeconds;
-                                  _onAlertWithCustomContentPressed(context, seconds);
-                                });
-                              },
-                              child: Text(
-                                'Add Note',
-                                style: kLabelTextStyle,
-                              ),
-                            ),
-                          )),
-                      Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 30.0, right: 30.0),
-                            child: FlatButton(
-                              color: Colors.lightBlueAccent,
-                              onPressed: () {
+            Container(
+              height: MediaQuery.of(context).size.height / 2,
+              child: Column(
+                children: [
+                  Container(
+                    height: 50.0,
+                    child: Row(
+                      children: [
+                        Expanded(
+                            child: Padding(
+                          padding:
+                              const EdgeInsets.only(left: 30.0, right: 30.0),
+                          child: FlatButton(
+                            color: Colors.lightBlueAccent,
+                            onPressed: () {
+                              setState(() {
                                 _chewieController.pause();
-                                setState(() {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => QuizScreen()));
-                                });
-                              },
-                              child: Text(
-                                'Start Quiz',
-                                style: kLabelTextStyle,
-                              ),
+                                int seconds = _chewieController
+                                    .videoPlayerController
+                                    .value
+                                    .position
+                                    .inSeconds;
+                                _onAlertWithCustomContentPressed(
+                                    context, seconds);
+                              });
+                            },
+                            child: Text(
+                              'Add Note',
+                              style: kLabelTextStyle,
                             ),
-                          )),
-                    ],
+                          ),
+                        )),
+                        Expanded(
+                            child: Padding(
+                          padding:
+                              const EdgeInsets.only(left: 30.0, right: 30.0),
+                          child: FlatButton(
+                            color: Colors.lightBlueAccent,
+                            onPressed: () {
+                              _chewieController.pause();
+                              bloc.submitQuery();
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) =>
+                                      QuizScreen(bloc: bloc)));
+                            },
+                            child: Text(
+                              'Start Quiz',
+                              style: kLabelTextStyle,
+                            ),
+                          ),
+                        )),
+                      ],
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 10.0,
-                ),
-                Container(
-                  child: Expanded(
-                    child: NoteList(notes: notes,),
+                  SizedBox(
+                    height: 10.0,
                   ),
-                )
-              ],
-            ),
-          )
-        ],
+                  Container(
+                    child: Expanded(
+                      child: NoteList(
+                        notes: notes,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
